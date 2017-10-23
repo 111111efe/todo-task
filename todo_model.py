@@ -20,3 +20,9 @@ class TodoTask(models.Model):
 
 		return True
 
+	@api.multi
+	def do_clear_done(self): 
+		dones = self.search([('is_done', '=', True)])
+		dones.write({'active': False}) #paso a falso todos los registos en true
+		return True
+

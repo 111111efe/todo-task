@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api 
+from odoo import models, fields, api
 
 class TodoTask(models.Model): 
 	_name = 'todo.task' 
@@ -25,4 +25,3 @@ class TodoTask(models.Model):
 		dones = self.search([('is_done', '=', True)])
 		dones.write({'active': False}) #paso a falso todos los registos en true
 		return True
-
